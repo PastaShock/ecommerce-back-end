@@ -22,7 +22,7 @@ Product.init(
       autoIncrement: true,
     },
     // product name
-    prod_name: {
+    product_name: {
       // set data type
       type: DataTypes.STRING,
       // allow null
@@ -53,7 +53,7 @@ Product.init(
       },
     },
     // category id based on foreign key
-    cat_id: {
+    category_id: {
       // set data type
       type: DataTypes.INTEGER,
       // set reference for foreign key
