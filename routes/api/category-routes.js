@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       // call model name (from models)
       model: Product,
       // declare columns to return
-      attributes:['id', 'prod_name', 'price', 'stock', 'cat_id'],
+      attributes:['id', 'product_name', 'price', 'stock', 'category_id'],
     },
   }).then(data => {
     if(!data) {
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
      },
      include: {
        model: Product,
-       attributes: ['id', 'prod_name', 'price', 'stock', 'cat_id']
+       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
      },
   }).then(data => {
     if(!data) {
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
   // create a new category
   Category.create({
     // create with key:value
-    cat_name: req.body.cat_name,
+    category_name: req.body.category_name,
   }).then(data => res.json(data))
   .catch(err => {
     console.log(err);
