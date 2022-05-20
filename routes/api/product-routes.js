@@ -52,7 +52,7 @@ router.get('/:id', (req, res) => {
       res.status(404).json({message: 'product does not exist'});
       return;
     }
-    req.json(data);
+    res.json(data);
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
