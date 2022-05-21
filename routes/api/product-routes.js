@@ -101,10 +101,11 @@ router.post('/', (req, res) => {
 // update product
 router.put('/:id', (req, res) => {
   // update product data
+  console.log(`id: ${req.params.id}\nbody: ${JSON.stringify(req.body)}`)
   Product.update(req.body, {
     where: {
       id: req.params.id,
-    },
+    }
   })
     .then((product) => {
       // find all associated tags from ProductTag
@@ -151,7 +152,7 @@ router.delete('/:id', (req, res) => {
       res.status(404).json({message: 'product does not exist'});
       return;
     }
-    req.json(data);
+    res.json(`process completed with status: ${data}`);
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
